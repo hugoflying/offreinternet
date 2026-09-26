@@ -13,7 +13,7 @@
   --combo:#5a3fd8; --combo-bg:#efebff;
   --cheap:#0d8a57; --cheap-bg:#e3f5ec;
   --value:#c05a0c; --value-bg:#fff1e2;
-  --sosh:#d4246f; --free:#d11f2a; --sfr:#8a8fa3;
+  --sosh:#d4246f; --free:#d11f2a; --sfr:#8a8fa3; --byou:#0a5bb0;
   --save:#0d8a57;
 }
 @media (prefers-color-scheme: dark){
@@ -21,14 +21,14 @@
     color-scheme:dark;
     --ink:#eef0f7; --ink2:#c9cddd; --muted:#9aa0b6; --ground:#0f1118; --panel:#181b25; --line:#2a2e3c; --soft:#1e2230;
     --combo:#a693ff; --combo-bg:#28224d; --cheap:#5ad89a; --cheap-bg:#12301f; --value:#ffb263; --value-bg:#3a2611;
-    --sosh:#ff5d9f; --free:#ff5c63; --sfr:#a3a8bc; --save:#5ad89a;
+    --sosh:#ff5d9f; --free:#ff5c63; --sfr:#a3a8bc; --byou:#5aa2ff; --save:#5ad89a;
   }
 }
 :root[data-theme="dark"]{
   color-scheme:dark;
   --ink:#eef0f7; --ink2:#c9cddd; --muted:#9aa0b6; --ground:#0f1118; --panel:#181b25; --line:#2a2e3c; --soft:#1e2230;
   --combo:#a693ff; --combo-bg:#28224d; --cheap:#5ad89a; --cheap-bg:#12301f; --value:#ffb263; --value-bg:#3a2611;
-  --sosh:#ff5d9f; --free:#ff5c63; --sfr:#a3a8bc; --save:#5ad89a;
+  --sosh:#ff5d9f; --free:#ff5c63; --sfr:#a3a8bc; --byou:#5aa2ff; --save:#5ad89a;
 }
 html,body{background:var(--ground);color:var(--ink)}
 body{font-family:var(--bulma-family-primary);font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased}
@@ -75,6 +75,10 @@ section > .label{margin-bottom:10px;display:block}
 .cmp .o{font-weight:700;line-height:1.3}
 .cmp .o .dot{width:.55rem;height:.55rem;border-radius:50%;display:inline-block;margin-right:.5rem;vertical-align:.08em}
 .cmp .inc{color:var(--muted);font-size:.86rem;margin-top:.15rem;padding-left:1.05rem}
+.cmp .net{font-size:.8rem;color:var(--ink2);margin-top:.3rem;padding-left:1.05rem;font-variant-numeric:tabular-nums}
+.cmp .net::before{content:"Réseau · ";color:var(--muted);font-weight:700}
+.cmp .cfg{font-size:.8rem;color:var(--ink2);margin-top:.15rem;padding-left:1.05rem}
+.cmp .cfg::before{content:"Réglages · ";color:var(--muted);font-weight:700}
 .cmp .p{font-weight:800;font-size:1.05rem}
 .cmp .y1{color:var(--muted);font-size:.85rem}
 .cmp .s{font-weight:700;color:var(--save)}
@@ -135,45 +139,9 @@ a:focus-visible{outline:2px solid var(--combo);outline-offset:2px}
     </div>
   </header>
 
-  <div class="picks">
-    <article class="pick combo">
-      <span class="badge-x">★ Meilleur combo</span>
-      <h2>Sosh (box seule) + Parisien solo + Amazon Prime + Canal+ sans 2ᵉ écran</h2>
-      <div class="price"><b class="num">53,73 €</b><span>/mois</span></div>
-      <div class="save num">−16,16 €/mois <small>· ≈ −194 €/an</small></div>
-      <ul>
-        <li>Tout Canal+ : sport, chaîne CANAL+, ciné, Apple TV+</li>
-        <li>TV via myCANAL : retour au début, jusqu'à 8 h après</li>
-        <li>Parisien solo + Amazon Prime complet</li>
-      </ul>
-      <p class="foot">Quand le tarif Canal+ −26 ans remonte : on résilie et on passe à 38,74 €.</p>
-    </article>
-    <article class="pick cheap">
-      <span class="badge-x">Le moins cher</span>
-      <h2>Sosh + Orange sur Apple TV + Parisien solo + Amazon Prime</h2>
-      <div class="price"><b class="num">38,74 €</b><span>/mois</span></div>
-      <div class="save num">−31,15 €/mois <small>· ≈ −374 €/an</small></div>
-      <ul>
-        <li>200 chaînes et Start Over</li>
-        <li>Parisien solo + Amazon Prime complet</li>
-      </ul>
-      <p class="foot">Contrôle du direct plus limité, pas d'enregistrement.</p>
-    </article>
-    <article class="pick value">
-      <span class="badge-x">Meilleur rapport offre/prix</span>
-      <h2>Freebox Ultra</h2>
-      <div class="price"><b class="num">59,99 €</b><span>/mois</span></div>
-      <div class="save num">−9,90 €/mois <small>· 49,99 € la 1ʳᵉ année</small></div>
-      <ul>
-        <li>Netflix, Amazon Prime, Disney+, CANAL+ La Chaîne, Cafeyn</li>
-        <li>4 h de retour et enregistrement</li>
-      </ul>
-      <p class="foot">Sans le sport Canal+ ni Apple TV+.</p>
-    </article>
-  </div>
 
   <section>
-    <span class="label">Toutes les options · prix par mois après 1 an</span>
+    <span class="label">Toutes les options · classées par économie par mois (après 1 an)</span>
     <table class="cmp">
       <thead><tr><th>Offre</th><th class="r">Prix / mois</th><th class="r">1ʳᵉ année</th><th class="r">Économie</th></tr></thead>
       <tbody>
@@ -184,34 +152,58 @@ a:focus-visible{outline:2px solid var(--combo);outline-offset:2px}
           <td class="r" data-l="Économie"><span class="s">—</span></td>
         </tr>
         <tr>
-          <td class="first"><div class="o"><span class="dot" style="background:var(--sosh)"></span>Sosh + Orange sur Apple TV + Parisien solo + Amazon Prime<span class="chip cheap">Le moins cher</span></div><div class="inc">200 chaînes · retour 30 min avant le début, pas d'enregistrement</div></td>
+          <td class="first"><div class="o"><span class="dot" style="background:var(--sosh)"></span>Sosh + Orange sur Apple TV + Parisien solo + Amazon Prime<span class="chip cheap">Le moins cher</span></div><div class="net">Livebox 6 · ↓ 2 Gb/s partagés · ↑ 800 Mb/s · Wi-Fi 6E · fixe inclus (appels illimités vers les fixes)</div><div class="cfg">IP dynamique (pas d'IP fixe) · ports, DMZ, UPnP · DNS non modifiables · pas de mode bridge</div></td>
           <td class="r" data-l="Prix / mois"><span class="p num">38,74 €</span></td>
           <td class="r empty" data-l="1ʳᵉ année"><span class="y1">—</span></td>
           <td class="r" data-l="Économie"><span class="s num">−31,15 €</span></td>
         </tr>
         <tr>
-          <td class="first"><div class="o"><span class="dot" style="background:var(--sosh)"></span>Sosh + Orange sur Apple TV + Cafeyn + Amazon Prime</div><div class="inc">200 chaînes · Cafeyn via le forfait Bouygues (9,90 €)</div></td>
+          <td class="first"><div class="o"><span class="dot" style="background:var(--sosh)"></span>Sosh + Orange sur Apple TV + Cafeyn + Amazon Prime</div><div class="net">Livebox 6 · ↓ 2 Gb/s partagés · ↑ 800 Mb/s · Wi-Fi 6E · fixe inclus (appels illimités vers les fixes)</div><div class="cfg">IP dynamique (pas d'IP fixe) · ports, DMZ, UPnP · DNS non modifiables · pas de mode bridge</div></td>
           <td class="r" data-l="Prix / mois"><span class="p num">45,72 €</span></td>
           <td class="r empty" data-l="1ʳᵉ année"><span class="y1">—</span></td>
           <td class="r" data-l="Économie"><span class="s num">−24,17 €</span></td>
         </tr>
         <tr>
-          <td class="first"><div class="o"><span class="dot" style="background:var(--sosh)"></span>Sosh (box seule) + Parisien solo + Amazon Prime + Canal+ sans 2ᵉ écran<span class="chip combo">★ Meilleur combo</span></div><div class="inc">TV via myCANAL · sport, chaîne CANAL+, ciné, Apple TV+ · Canal+ au tarif −26 ans</div></td>
+          <td class="first"><div class="o"><span class="dot" style="background:var(--free)"></span>Freebox Pop + Parisien solo + Amazon Prime<span class="chip combo">★ Meilleur combo</span></div><div class="net">10G-EPON · ↓ jusqu'à 5 Gb/s partagés · Ethernet 2,5 Gb/s sur 1 port (1 Gb/s sur 2 ports) · Wi-Fi 7 bi-bande · répéteur sur demande</div><div class="cfg">IPv4 dédiée sur demande · ports, DMZ, UPnP · DNS modifiables · reverse DNS · mode bridge · VPN intégré</div></td>
+          <td class="r" data-l="Prix / mois"><span class="p num">48,74 €</span></td>
+          <td class="r" data-l="1ʳᵉ année"><span class="y1 num">38,74 € (−31,15 €)</span></td>
+          <td class="r" data-l="Économie"><span class="s num">−21,15 €</span></td>
+        </tr>
+        <tr>
+          <td class="first"><div class="o"><span class="dot" style="background:var(--sosh)"></span>Sosh (box seule) + Parisien solo + Amazon Prime + Canal+ sans 2ᵉ écran</div><div class="net">Livebox 6 · ↓ 2 Gb/s partagés · ↑ 800 Mb/s · Wi-Fi 6E · fixe inclus (appels illimités vers les fixes)</div><div class="cfg">IP dynamique (pas d'IP fixe) · ports, DMZ, UPnP · DNS non modifiables · pas de mode bridge</div></td>
           <td class="r" data-l="Prix / mois"><span class="p num">53,73 €</span></td>
           <td class="r empty" data-l="1ʳᵉ année"><span class="y1">—</span></td>
           <td class="r" data-l="Économie"><span class="s num">−16,16 €</span></td>
         </tr>
         <tr>
-          <td class="first"><div class="o"><span class="dot" style="background:var(--free)"></span>Freebox Ultra Essentiel + Parisien solo + Amazon Prime</div><div class="inc">340 chaînes · enregistrement · 4 h de retour</div></td>
+          <td class="first"><div class="o"><span class="dot" style="background:var(--free)"></span>Freebox Pop S (box seule) + Parisien solo + Amazon Prime + Canal+ sans 2ᵉ écran</div><div class="net">10G-EPON · ↓ jusqu'à 5 Gb/s partagés · Ethernet 2,5 Gb/s · Wi-Fi 7 bi-bande (2,4 et 5 GHz) · répéteur sur demande</div><div class="cfg">IPv4 dédiée sur demande · ports, DMZ, UPnP · DNS modifiables · reverse DNS · mode bridge · VPN intégré</div></td>
+          <td class="r" data-l="Prix / mois"><span class="p num">53,73 €</span></td>
+          <td class="r empty" data-l="1ʳᵉ année"><span class="y1">—</span></td>
+          <td class="r" data-l="Économie"><span class="s num">−16,16 €</span></td>
+        </tr>
+        <tr>
+          <td class="first"><div class="o"><span class="dot" style="background:var(--free)"></span>Freebox Ultra Essentiel + Parisien solo + Amazon Prime</div><div class="net">↓ 8 Gb/s · ↑ 8 Gb/s · Wi-Fi 7 quad-bande · répéteur Wi-Fi 7 inclus sur demande</div><div class="cfg">IPv4 dédiée sur demande · ports, DMZ, UPnP · DNS modifiables · reverse DNS · mode bridge · VPN intégré</div></td>
           <td class="r" data-l="Prix / mois"><span class="p num">58,74 €</span></td>
           <td class="r" data-l="1ʳᵉ année"><span class="y1 num">48,74 € (−21,15 €)</span></td>
           <td class="r" data-l="Économie"><span class="s num">−11,15 €</span></td>
         </tr>
         <tr>
-          <td class="first"><div class="o"><span class="dot" style="background:var(--free)"></span>Freebox Ultra<span class="chip value">Meilleur rapport offre/prix</span></div><div class="inc">Tout l'Essentiel + Netflix, Amazon Prime (−69,90 €/an), Disney+, CANAL+ La Chaîne, Cafeyn</div></td>
+          <td class="first"><div class="o"><span class="dot" style="background:var(--free)"></span>Freebox Ultra<span class="chip value">Meilleur rapport offre/prix</span></div><div class="net">↓ 8 Gb/s · ↑ 8 Gb/s · Wi-Fi 7 quad-bande · répéteur Wi-Fi 7 inclus sur demande</div><div class="cfg">IPv4 dédiée sur demande · ports, DMZ, UPnP · DNS modifiables · reverse DNS · mode bridge · VPN intégré</div></td>
           <td class="r" data-l="Prix / mois"><span class="p num">59,99 €</span></td>
           <td class="r" data-l="1ʳᵉ année"><span class="y1 num">49,99 € (−19,90 €)</span></td>
           <td class="r" data-l="Économie"><span class="s num">−9,90 €</span></td>
+        </tr>
+        <tr>
+          <td class="first"><div class="o"><span class="dot" style="background:var(--byou)"></span>B&amp;YOU Pure fibre Plus + Parisien solo + Amazon Prime + Canal+ avec 2 écrans</div><div class="net">↓ 8 Gb/s · ↑ 1 Gb/s · Wi-Fi 7 tri-bande · répéteur Wi-Fi 7 en option</div><div class="cfg">IPv4 en général fixe · ports, DMZ, UPnP · DNS modifiables · bridge selon la box</div></td>
+          <td class="r" data-l="Prix / mois"><span class="p num">61,73 €</span></td>
+          <td class="r empty" data-l="1ʳᵉ année"><span class="y1">—</span></td>
+          <td class="r" data-l="Économie"><span class="s num">−8,16 €</span></td>
+        </tr>
+        <tr>
+          <td class="first"><div class="o"><span class="dot" style="background:var(--free)"></span>Freebox Pop + Parisien solo + Amazon Prime + Canal+ sans 2ᵉ écran</div><div class="net">10G-EPON · ↓ jusqu'à 5 Gb/s partagés · Ethernet 2,5 Gb/s sur 1 port (1 Gb/s sur 2 ports) · Wi-Fi 7 bi-bande · répéteur sur demande</div><div class="cfg">IPv4 dédiée sur demande · ports, DMZ, UPnP · DNS modifiables · reverse DNS · mode bridge · VPN intégré</div></td>
+          <td class="r" data-l="Prix / mois"><span class="p num">68,73 €</span></td>
+          <td class="r" data-l="1ʳᵉ année"><span class="y1 num">58,73 € (−11,16 €)</span></td>
+          <td class="r" data-l="Économie"><span class="s num">−1,16 €</span></td>
         </tr>
       </tbody>
     </table>
@@ -244,12 +236,16 @@ a:focus-visible{outline:2px solid var(--combo);outline-offset:2px}
         <div class="box">
           <h3>Détail des calculs</h3>
           <ul>
-            <li>Sosh : box 24,99 € (prix fixe) + TV sur Apple TV 5 € + Parisien solo 35 €/an (2,92 €) + Amazon Prime 69,90 €/an (5,83 €)</li>
+            <li>Sosh (éligibilité à notre adresse) : La Boîte, Livebox 6, box 24,99 € (sans engagement) + TV sur Apple TV 5 € + Parisien solo 35 €/an (2,92 €) + Amazon Prime 69,90 €/an (5,83 €)</li>
             <li>Variante Sosh + Cafeyn : Cafeyn via le forfait Bouygues à 9,90 €/mois au lieu du Parisien solo</li>
             <li>Canal+ aujourd'hui : Sport 17,99 € + à la demande et Apple TV 2 € + 2ᵉ écran 5 € = 24,99 €</li>
             <li>Canal+ sans 2ᵉ écran : 19,99 €</li>
             <li>Freebox Ultra Essentiel : Cafeyn en option (3 mois offerts puis 9,99 €), d'où le Parisien solo en plus, et Amazon Prime à prendre à part (69,90 €/an = 5,83 €/mois). 320 h d'enregistrement et Player TV 4K inclus</li>
             <li>Freebox Ultra : Cafeyn inclus, pas de journal à ajouter</li>
+            <li>Freebox Pop sans Canal+ : box 29,99 € la 1ʳᵉ année puis 39,99 € + Parisien solo 2,92 € + Amazon Prime 5,83 €</li>
+            <li>Freebox Pop : box 29,99 € la 1ʳᵉ année puis 39,99 € (TV + téléphone fixe inclus) + Parisien solo 2,92 € + Canal+ sans 2ᵉ écran 19,99 € + Amazon Prime 5,83 €</li>
+            <li>Freebox Pop S : box 24,99 € (sans TV ni téléphone fixe) + Parisien solo 2,92 € + Canal+ sans 2ᵉ écran 19,99 € + Amazon Prime 5,83 €</li>
+            <li>B&amp;YOU (Bouygues) : box Pure fibre Plus 27,99 € + Parisien solo 2,92 € + Canal+ avec 2ᵉ écran 24,99 € + Amazon Prime 5,83 €</li>
           </ul>
         </div>
       </div>
@@ -258,6 +254,9 @@ a:focus-visible{outline:2px solid var(--combo);outline-offset:2px}
 
   <footer>
     <span>Sources :</span>
+    <a href="https://www.free.fr/freebox/freebox-pop" target="_blank" rel="noopener">Free : Freebox Pop</a>
+    <a href="https://www.free.fr/freebox/freebox-pop-s" target="_blank" rel="noopener">Free : Freebox Pop S</a>
+    <span>B&amp;YOU : page des box sans engagement</span>
     <a href="https://www.free.fr/freebox/freebox-ultra" target="_blank" rel="noopener">Free : Freebox Ultra</a>
     <a href="https://www.free.fr/freebox/free-tv" target="_blank" rel="noopener">Free : Free TV</a>
     <a href="https://shop.sosh.fr/options/orange-tv" target="_blank" rel="noopener">Sosh : Orange TV sur TV connectée</a>
