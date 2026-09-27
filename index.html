@@ -107,7 +107,7 @@ section > .label{margin-bottom:10px;display:block}
 /* Details */
 .info{display:grid;gap:14px;grid-template-columns:minmax(0,1fr)}
 .info > *,.picks > *{min-width:0}
-@media (min-width:860px){.info{grid-template-columns:minmax(0,1.2fr) minmax(0,1fr)}}
+@media (min-width:860px){.info{grid-template-columns:minmax(0,1fr);max-width:640px}}
 .box{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:1.1rem}
 .box h3{font-size:1rem;font-weight:700;margin-bottom:.6rem;color:var(--ink)}
 .box ul{padding-left:1.1rem;list-style:disc;display:grid;gap:.35rem;font-size:.9rem;color:var(--ink2)}
@@ -164,16 +164,10 @@ a:focus-visible{outline:2px solid var(--combo);outline-offset:2px}
           <td class="r" data-l="Économie"><span class="s num">−24,17 €</span></td>
         </tr>
         <tr>
-          <td class="first"><div class="o"><span class="dot" style="background:var(--free)"></span>Freebox Pop + Parisien solo<span class="chip combo">★ Meilleur combo</span></div><div class="net">10G-EPON · ↓ jusqu'à 5 Gb/s partagés · Ethernet 2,5 Gb/s sur 1 port (1 Gb/s sur 2 ports) · Wi-Fi 7 bi-bande · répéteur sur demande</div><div class="cfg">IPv4 dédiée sur demande · ports, DMZ, UPnP · DNS modifiables · reverse DNS · mode bridge · VPN intégré</div></td>
+          <td class="first"><div class="o"><span class="dot" style="background:var(--free)"></span>Freebox Pop + Parisien solo<span class="chip combo">★ Mon choix</span></div><div class="net">10G-EPON · ↓ jusqu'à 5 Gb/s partagés · Ethernet 2,5 Gb/s sur 1 port (1 Gb/s sur 2 ports) · Wi-Fi 7 bi-bande · répéteur sur demande</div><div class="cfg">IPv4 dédiée sur demande · ports, DMZ, UPnP · DNS modifiables · reverse DNS · mode bridge · VPN intégré</div></td>
           <td class="r" data-l="Prix / mois"><span class="p num">42,91 €</span></td>
           <td class="r" data-l="1ʳᵉ année"><span class="y1 num">32,91 € (−31,15 €)</span></td>
           <td class="r" data-l="Économie"><span class="s num">−21,15 €</span></td>
-        </tr>
-        <tr>
-          <td class="first"><div class="o"><span class="dot" style="background:var(--sosh)"></span>Sosh (box seule) + Parisien solo + Canal+ sans 2ᵉ écran<span class="chip value">Meilleur rapport offre/prix</span></div><div class="net">Livebox 6 · ↓ 2 Gb/s partagés · ↑ 800 Mb/s · Wi-Fi 6E · fixe inclus (appels illimités vers les fixes)</div><div class="cfg">IP dynamique (pas d'IP fixe) · ports, DMZ, UPnP · DNS non modifiables · pas de mode bridge</div></td>
-          <td class="r" data-l="Prix / mois"><span class="p num">47,90 €</span></td>
-          <td class="r empty" data-l="1ʳᵉ année"><span class="y1">—</span></td>
-          <td class="r" data-l="Économie"><span class="s num">−16,16 €</span></td>
         </tr>
         <tr>
           <td class="first"><div class="o"><span class="dot" style="background:var(--free)"></span>Freebox Pop S (box seule) + Parisien solo + Canal+ sans 2ᵉ écran</div><div class="net">10G-EPON · ↓ jusqu'à 5 Gb/s partagés · Ethernet 2,5 Gb/s · Wi-Fi 7 bi-bande (2,4 et 5 GHz) · répéteur sur demande</div><div class="cfg">IPv4 dédiée sur demande · ports, DMZ, UPnP · DNS modifiables · reverse DNS · mode bridge · VPN intégré</div></td>
@@ -223,30 +217,6 @@ a:focus-visible{outline:2px solid var(--combo);outline-offset:2px}
               <tr><td>Programme fini</td><td>Replay</td><td>Replay</td><td class="w">Jusqu'à 8 h après</td></tr>
             </tbody>
           </table>
-        </div>
-      </div>
-      <div class="stack">
-        <div class="box">
-          <h3>À vérifier avant de signer</h3>
-          <ul>
-            <li>Qu'on utiliserait vraiment Netflix ou Disney+ (sinon l'Ultra ne vaut pas le coup)</li>
-            <li>Est-ce qu'on regarde vraiment le sport Canal+ ? Le tarif −26 ans remontera plus tard.</li>
-          </ul>
-        </div>
-        <div class="box">
-          <h3>Détail des calculs</h3>
-          <ul>
-            <li>Sosh (éligibilité à notre adresse) : La Boîte, Livebox 6, box 24,99 € (sans engagement) + TV sur Apple TV 5 € + Parisien solo 35 €/an (2,92 €)</li>
-            <li>Variante Sosh + Cafeyn : Cafeyn via le forfait Bouygues à 9,90 €/mois au lieu du Parisien solo</li>
-            <li>Canal+ aujourd'hui : Sport 17,99 € + à la demande et Apple TV 2 € + 2ᵉ écran 5 € = 24,99 €</li>
-            <li>Canal+ sans 2ᵉ écran : 19,99 €</li>
-            <li>Freebox Ultra Essentiel : Cafeyn en option (3 mois offerts puis 9,99 €), d'où le Parisien solo en plus. 320 h d'enregistrement et Player TV 4K inclus</li>
-            <li>Freebox Ultra : Cafeyn inclus, pas de journal à ajouter</li>
-            <li>Freebox Pop sans Canal+ : box 29,99 € la 1ʳᵉ année puis 39,99 € + Parisien solo 2,92 €</li>
-            <li>Freebox Pop : box 29,99 € la 1ʳᵉ année puis 39,99 € (TV + téléphone fixe inclus) + Parisien solo 2,92 € + Canal+ sans 2ᵉ écran 19,99 €</li>
-            <li>Freebox Pop S : box 24,99 € (sans TV ni téléphone fixe) + Parisien solo 2,92 € + Canal+ sans 2ᵉ écran 19,99 €</li>
-            <li>B&amp;YOU (Bouygues) : box Pure fibre Plus 27,99 € + Parisien solo 2,92 € + Canal+ avec 2ᵉ écran 24,99 €</li>
-          </ul>
         </div>
       </div>
     </div>
